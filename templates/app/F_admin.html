@@ -1,0 +1,52 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+<section id="loginForm">
+    <center>
+             <div class="jumbotron">
+                   <h2>Your password must contain</h2>
+                   <p><strong>At least 8 characters long</strong></p>
+                   <p><strong>Contain uppercase and lowercase characters</strong></p>    
+             </div>
+            </center>
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+       <br />
+        <center><button><a href="{%url 'adminLogin'%}">Back To Login</a></button></center>
+        <hr />
+        <h2 class="validation-summary-errors">{{error}}</h2>
+        <h2 class="good">{{message}}</h2>
+        <br />
+        <input type="text" placeholder="Lecture Id" name="txtno" required><br>
+        <hr />
+        <input type="password" placeholder="New Password" name="txtpass" required /><br /><br />
+        <input type="password" placeholder="Re-Enter" name="txtrepass" required/><br /><br />
+        <div class="form-group">
+            <button name="btnLogin" type="submit" value="Log in">Reset</button>
+            <br>
+            <br>
+           
+        </div>
+       
+        {% if form.error %}
+        <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+        {% endif %}
+    </form>
+</section>
+<div class="col-md-4">
+    <section id="socialLoginForm"></section>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% load static%}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}
+
+

@@ -1,0 +1,58 @@
+﻿{% extends "app/mainAdmin.html"%}
+{%load static%}
+{%block content%}
+<center>
+    <div class="title">
+        <h1><img src="{%static 'app/images/icons8-username-100.png'%}" width="50px">{{name}}</h1>
+    </div>
+</center>
+<br /><br />
+<center>
+    <div class="dash-grid">
+                    <div class="dash-item">
+                        <h1><img src="{% static 'app/images/icons8-schedule-100.png'%}" width="50px"> Submitted</h1>
+                        <hr size="2px" color="#000">
+                        <h3>Students who have submitted there tests/exams</h3>
+                        <br />
+                        <button><a href="{% url 'sub'%}">View</a></button>
+                       
+                        <br /><br />
+                    </div>
+                    <div class="dash-item2">
+                        <h1><img src="{%static 'app/images/icons8-notification-96.png'%}" width="50px">Test/Exams in session</h1>
+                        <hr size="2px" color="#000">
+                        <h3>Students who are currently writing their test/exams</h3>
+                        <br />
+                        <button><a href="{%url 'currentV'%}">View</a></button>
+                        <br />
+                    </div>
+                    <div class="dash-item3">
+                        <h1><img src="{%static 'app/images/icons8-microsoft-tips-144.png'%}" width="50px"> Tips</h1>
+                        <hr size="2px" color="#000">
+                        <h3>Always change your password every month for safety reasons</h3>                
+                    </div>
+                    <div class="dash-item">
+                        <h1><img src="{%static 'app/images/icons8-male-user-80.png'%}" width="50px">Students</h1>
+                        <hr size="2px" color="#000"/>
+                        <h3>Click  to view students</h3>
+                        <br />
+                        <button><a href="{%url 'studentV'%}">View</a></button>
+                       
+                        
+                        <br /><br />
+                    </div>
+                    <div class="dash-item2"> 
+                       
+                        <h1><img src="{%static 'app/images/icons8-schedule-100.png'%}" width="50px">Test/Exams</h1>
+                        <hr size="2px" color="#000"/>
+                        <h3>Scheduled exams</h3>
+                        <br />
+                        <button><a href="{%url 'scheduleV'%}">View</a></button>
+                        
+                        
+                        <br /><br />
+                    </div>
+                    <br><br>
+                </div>
+</center>
+{%endblock%}

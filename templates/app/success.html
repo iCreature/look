@@ -1,0 +1,11 @@
+{%extends 'app/layoutTestA.html'%}
+{%load static%}
+{%block content%}
+<center>
+    <div class="jumbotron">
+        <h1 class="good">You have Successfully added a new Exam/Test</h1>
+    </div>
+    <br /><br /><br />
+    <button><a href="{% url 'a_Dash'%}">Dashboard</a></button>
+</center>
+{%endblock%}

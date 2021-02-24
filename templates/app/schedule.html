@@ -1,0 +1,50 @@
+{%extends 'app/LayoutTestA.html'%}
+{%load static%}
+{%block content%}
+<form method="post" action="">
+    {%csrf_token%}
+    
+    <center>
+        <button><a href="{%url 'a_Dash'%}">Back</a></button>
+    </center>
+     <br />
+     <br />
+ 
+     <br />
+    <i><h4 color="#f5f5f5">* please note that Duration is in hours</h4></i>
+    <br /><br />
+    <hr size="2px" color="#000">
+    <center>
+        <table cellpadding="10" cellspacing="3">
+            <tbody>
+                <tr>
+                    <th>Examiner</th>
+                    <th>Module</th>
+                    <th>Duration</th>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Time</th> 
+                    <th>Total Marks</th>
+                </tr>
+                {%for s in schedule%}
+                <tr>
+                    <td>{{s.examiner}}</td>
+                    <td>{{s.module}}</td>
+                    <td>{{s.duration}}</td>
+                    <td>{{s.test_id}}</td>
+                    <td>{{s.type}}</td>
+                    <td>{{s.date}}</td>
+                    <td>{{s.time}}</td>
+                    <td>{{s.mark_tot}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </center>
+    <br />
+    <br />
+    <br />
+   
+</form>
+{%endblock%}

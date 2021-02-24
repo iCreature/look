@@ -1,0 +1,37 @@
+{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+<div class="jumbotron">
+    <h1>New user</h1>
+    <p class="lead">Please select which type of user you would like to add</p>
+    <p>
+        <!--<a href="" class="btn btn-primary btn-large">Learn more &raquo;</a>-->
+    </p>
+</div><br /><br />
+ <center>
+        <button><a href="{%url 'a_Dash'%}">Back</a></button>
+    </center><br /><br /><br />
+    <div class="row">
+    <center>
+        <div class="dash-grid">
+            <div class="dash-item">
+                <br>
+                <img src="{%static 'app/images/icons8-male-user-52.png'%}" width="60px">
+                <h1>Student</h1>
+                <br>
+                <button><a href="{% url 'add'%}">Select</a></button>
+                <br><br>
+            </div>
+            <div class="dash-item3">
+                <br>
+                <img src="{% static 'app/images/icons8-male-user-52.png'%}" width="60px">
+                <h1>Admin</h1>
+                <br />
+                <button><a href="{% url 'adduser'%}">Select</a></button>
+                <br><br>
+            </div>
+        </div>
+    </center>
+</div>
+
+{%endblock%}

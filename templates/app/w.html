@@ -1,0 +1,28 @@
+{%extends 'app/write.html'%}
+{%load static%}
+{%block content%}
+    <form method="post" action="">
+        {%csrf_token%}
+   
+        <center>
+            <button><a href="{%url 'test'%}">Exit</a></button><br /><br />
+            <h3><i style="color:red">*Note if You Leave The Exam Your Answer(s) will not be saved</i></h3>
+        </center>
+        <br /><br /><br />
+      {%for i in details%}
+        <center>  
+            <div class="question">               
+                <h1>Question {{forloop.counter}}</h1>
+                <hr size="0.5px" color="#000">
+                <h3>{{i.question}}</h3>
+                <p><i>Hint:Type your answer in the box below</i></p>
+            </div>          
+            <textarea name="txtAnswer" rows="15" placeholder="Type your answer">
+                </textarea>
+        </center>      
+      {%endfor%}
+        <center>
+           <!-- <button name="btnNext" type="submit">Submit</button> -->
+        </center>
+    </form>
+{%endblock%}

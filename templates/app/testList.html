@@ -1,0 +1,42 @@
+{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+<form method="post" action="">
+    {%csrf_token%}
+    <center>
+        <button><a href="{%url 's_Dash'%}">Dashboard</a></button>
+    </center>
+    <br /><br />
+    <center>
+        <h3><i>*Duration is in Hours</i></h3>
+    </center>
+    <br /><br />
+    <center>      
+        <table cellpadding="10" cellspacing="1">
+            <tbody>
+                <tr>
+                    <th>Examiner</th>
+                    <th>Module</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Time</th>
+                </tr>
+                {% for i in test_info%}
+                <tr>
+                    <td>{{i.examiner}}</td>
+                    <td>{{i.module}}</td>
+                    <td>{{i.type}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.duration}}</td>
+                    <td>{{i.time}}</td>
+                    <td><a href="{%url 'exam' i.test_id%}">write</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <h2><i style="color:forestgreen">{{message}}</i></h2>
+    </center>
+
+</form>
+{%endblock%}

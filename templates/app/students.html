@@ -1,0 +1,74 @@
+{%extends 'app/layoutTestA.html'%}
+{% load static%}
+{%block content%}
+<form method="post" action="">
+    {%csrf_token%}
+    
+    <center>
+        <button><a href="{%url 'a_Dash'%}">Back</a></button>
+    </center><br /><br /><br />
+    <center>
+        <h5><i>Filter by Course</i></h5>
+        
+        <select name="course">
+            <option value="default">All</option>
+            <option value="BSc">BSc</option>
+            <option value="DIT">DIT</option>
+        </select>
+        <br />
+        <br/>
+    </center>
+    <center>
+        <h5><i>Filter by Year</i></h5>
+        <select name="year">
+            <option value="default">All</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+        </select>
+        <br />
+        <br/><br /><br />
+        <center>
+            <button name="btnSearch" type="submit">Search</button>
+        </center>
+        <br/><br /><br />
+    </center>
+    <center>
+        <hr size="2px" color="#000">
+        <table cellpadding="10" cellspacing="1">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Student Number</th>
+                    <th>Course</th>
+                    <th>Year</th>
+                </tr>
+                 {%for s in student%}
+                <tr>
+                   
+                    <td>{{s.fname}}</td>
+                    <td>{{s.surname}}</td>
+                    <td>{{s.student_no}}</td>
+                    <td>{{s.course}}</td>
+                    <td>{{s.year}}</td>
+                    
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+       <!-- {%for s in student%}
+                    {{s.fname}}
+                    {{s.surname}}
+                    {{s.student_no}}
+                    {{s.course}}
+                    {{s.year}}
+                    {%endfor%}
+           -->
+    </center>
+    <br />
+    <br />
+    <br />
+    
+</form>
+{%endblock%}

@@ -1,0 +1,50 @@
+{%extends "app/layoutTestA.html"%}
+{%load static %}
+{%block content%}
+<form enctype="multipart/form-data" method="post" action="">
+    {%csrf_token%}
+ <center>
+                <div class="title">
+                    <h1><img src="{%static 'app/images/icons8-username-100.png'%}" width="50px">{{name}}</h1>
+                </div>
+            </center>
+            <br><br>
+     <center>
+        <button><a href="{%url 'a_Dash'%}">Back</a></button>
+    </center><br /><br /><br />
+            <center>
+                <h2 class="validation-summary-errors">{{error}}</h2>
+                <h2 class="good">{{message}}</h2>
+            </center>
+            <br /><br />
+            <center>
+                <input type="text" placeholder="Name" name="txtnam" id="txtId" required>
+                <br><br>
+                <input type="text" placeholder="Surname" name="txtsurnam" id="txtSur" required>
+                <br><br>
+                <br /><br>
+                <!--<p>Upload image:<input type="file" name="image"></p>-->
+                <input type="number" placeholder="I.D. number" required name="txtid">
+                <br><br>
+                <input type="email" placeholder="email address" required name="txtemail">
+                <br><br>
+                <h2>Course</h2>
+                <select name="course">
+                    <option value="BSc">BSc</option>
+                    <option value="Diploma">Diploma</option>
+                </select>
+               <br /><br />
+                <h2>Year</h2>
+                <select name="year">
+                    <option value="3rd">3rd</option>
+                    <option value="2nd">2nd</option>
+                    <option value="1st">1st</option>
+                </select>
+            </center>
+            <br><br>
+            <center>
+                <button type="submit" name="btnCreate" value="submit">Create user</button>
+            </center>
+
+</form>
+{%endblock%}

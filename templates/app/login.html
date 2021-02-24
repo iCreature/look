@@ -1,0 +1,52 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<section id="loginForm">
+    <h1>Student</h1>
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+        <center>
+            <img src="{%static 'app/images/icons8-male-user-90.png'%}" width="150px">
+        </center><br> <br> <br>
+        <hr />
+        <h2 class="validation-summary-errors">{{error}}</h2>
+        <br />
+        <input type="text" placeholder="Student number" name="txtuser" required id="txtUser"><br><br>
+        <input type="password" placeholder="Password" name="txtpass" required id="txtPass"><br /><br /><br />
+
+        <div class="form-group">
+            <button name="btnLogin" type="submit" value="Log in">Login</button>
+            <br>
+            <br>
+            <p>Forgot password ?click <a href="{%url 'resetS'%}">here</a></p>
+        </div>
+       
+        {% if form.error %}
+        <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+        {% endif %}
+    </form>
+</section>
+
+<!--{%for student in student_no%}
+{{student.fname}}
+{{student.surname}}
+{{student.email}}
+{{student.student_no}}
+{%endfor%}
+-->
+<div class="col-md-4">
+    <section id="socialLoginForm"></section>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% load static%}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

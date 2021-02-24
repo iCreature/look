@@ -1,0 +1,50 @@
+﻿{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+    <form method="POST" action="">
+        {%csrf_token%}
+        <center>
+            <div class="title">
+                <h1><img src="{%static 'app/images/icons8-username-100.png'%}" width="50px">{{name}}</h1>
+            </div>
+        </center><br /><br />
+        <center>
+            <button><a href="{%url 'a_Dash'%}">Back</a></button>
+        </center><br /><br /><br />
+        <h2 class="validation-summary-errors">
+            {{task}}
+        </h2>
+        <h2 class="good">
+            {{error}}
+        </h2>
+        <br><br>
+        <center>
+            <input type="text" placeholder="Name" name="txtnam" required>
+            <br><br>
+            <input type="text" placeholder="Surname" name="txtsur" required>
+            <br><br>
+            <input type="email" placeholder="email address" name="txtemail" required>
+            <br><br>
+            <input type="text" placeholder="Lecture Id" name="lectId" required>
+            <br /><br />
+            <select name="title">
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+            <h2>*User Type</h2>
+            <hr size="2px" color="#000">
+            <br>
+            <select name="type">
+                <option value="Lecture">Lecture</option>
+            </select>
+        </center>
+        <br><br>
+        <center>
+            <button id="btnCreate" name="Create" value="submit">Create user</button>
+        </center>
+    </form>
+    <center>        
+    </center>
+{%endblock%}

@@ -1,0 +1,75 @@
+﻿{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+<form method="post" action="">
+{%csrf_token%}
+
+<center>
+    <button class="back"><a href="{%url 'a_Dash'%}">CANCEL</a></button>
+            <br><br>
+            <center>
+                <h1 class="good">{{error}}</h1>
+            </center>
+            <br><br>
+            <center>
+                <h2>Subject</h2>
+                <select name="subject">
+                    <option value="Mathematics 512">Mathematics 512</option>
+                    <option value="Mathematics 600">Mathematics 600</option>
+                    <option value="Networking 512">Networking 512</option>
+                    <option value="Web Technology 512">Web Technology 512</option>
+                    <option value="Computer Archecture 600">Computer Archecture 600</option>
+                    <option value="Big Data & IOT 600">Big Data & IOT 600</option>
+                    <option value="Data Warehousing & Minning 600">Data Warehousing & Minning 600</option>
+                    <option value="Artifical Intelligence 700">Artifical Intelligence 700</option>
+                    <option value="Microprocessors 700">Microprocessors 700</option>
+                    <option value="e-Commerce 512">e-Commerce 512</option>
+                    <option value="m-Commerce 600">m-Commerce 600</option>
+                    <option value="Database Design 600">Database Design 600</option>
+                    <option value="Risk Management 700">Risk Management 700</option>
+                    <option value="Business Intelligence 700">Business Intelligence 700</option>
+                    <option value="Web Technology 500">Web Technology 500</option>
+                </select>
+            </center>
+            <br><br>
+            <center>
+                <h2>Total marks<i> *maximum of 100</i></h2>
+                <input type="number" required placeholder="Total Marks" name="totMarks"/>
+            </center>
+            <br><br>
+            <center>
+                <h2>Duration <i>(In hours)</i></h2>
+                <select name="duration">
+                    <option value="1">1 </option>
+                    <option value="2">2</option>
+                </select>
+            </center>
+            <br><br>
+            <center>
+                <h2>Date & Time </h2>
+               <input type="date" name="date" required" /><br /><br/>
+                <input type="time" name="time" required />
+            </center>
+            <br><br>
+            <center>
+                <h2>Number of Questions</h2>
+                <select name="num_q">
+                    <option value="5">5</option>
+                    <option value="10">10</option>                
+                </select>
+            </center>
+            <center>
+                <h2>Type</h2>
+                <select name="type">
+                    <option value="Exam">Exam</option>
+                    <option value="Test">Test</option>
+                </select>
+            </center>
+            <br><br><br><br>
+            <hr size="2px" color="#000">
+            <center><button name="btnNext" type="submit">Next</button></center>
+        </div>
+        <br><br>
+</center>
+    </form>
+{%endblock%}

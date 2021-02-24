@@ -1,0 +1,21 @@
+{%extends 'app/layoutTestA.html'%}
+{%load static%}
+{%load crispy_forms_tags%}
+{%block content%}
+<form method="post" action="" enctype="multipart/form-data">
+    {%csrf_token%}
+      <button><a href="{%url 's_Dash'%}">Back</a></button>
+    </center>
+    <br /><br />
+    <center>
+        <h4><i style="color:black">*Choose Test/Exam that you wish to upload only pdf's allowed</i></h4>
+    </center>
+    <br /><br />
+    <center>
+        {{message}}
+    </center>
+    <br /><br />
+   <center>{{form|crispy}}</center> <br /><br />
+    <button type="submit" name="btnUpload">Upload</button>
+</form>
+{%endblock%}

@@ -1,0 +1,45 @@
+﻿{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+<form method="post" action="">
+    {%csrf_token%}
+  <center>
+                <div class="title">
+                    <h1><img src="{%static 'app/images/icons8-male-user-52.png'%}" width="50px">Settings</h1>
+                </div>
+            </center><br /><br />
+            <center>
+                <button><a href="{% url 'a_Dash'%}">Dashboard</a></button>
+            </center>
+            <br /><br />
+            <center>
+             <div class="jumbotron">
+                    <h2>Your password must contain</h2>
+                   <p><strong>At least 8 characters long</strong></p>
+                   <p><strong>Contain uppercase and lowercase characters</strong></p>
+                      
+             </div>
+            </center>
+            <center>
+                <h2 class="validation-summary-errors">{{error}}</h2>
+                <h2 class="good">{{message}}</h2>
+            </center>
+            <br>
+            <center>
+                <div class="dash-grid">
+                    <div class="dash-item3">
+                        <h1><img src="{%static 'app/images/icons8-password-100.png'%}" width="50px">Password</h1>
+                        <hr size="2px" color="#000">
+                        <br>
+                        <input type="password" placeholder="new password" required name="txtPass">
+                        <br><br>
+                        <input type="password" placeholder="re-enter password" required name="txtRePass">
+                        <br><br><br>
+                        <button name="btnSubmit" value="submit">Update</button>
+                        <br><br>
+                    </div>
+                </div>
+                <br><br><br><br>
+            </center>
+    </form>
+{%endblock%}

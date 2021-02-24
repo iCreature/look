@@ -1,0 +1,49 @@
+{%extends 'app/layoutTestA.html'%}
+{%load static%}
+{%block content%}
+<form action="" method="post">
+    {%csrf_token%}
+     <center>
+        <button><a href="{%url 'a_Dash'%}">Back</a></button>
+    </center>
+     <br />
+     <br />
+     <br />
+   
+    <br />
+     <br />
+    <i><h4 color="#f5f5f5">* please note that Duration is in hours</h4></i>
+    <br /><br />
+    <hr size="2px" color="#000">
+    <center>
+        <table cellpadding="10" cellspacing="1">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Student Number</th>
+                    <th>Course</th>
+                    <th>Year</th>
+                    <th>Status</th>
+                </tr>
+                 {%for s in write%}
+                <tr>  
+                    <td>{{s.fname}}</td>
+                    <td>{{s.surname}}</td>
+                    <td>{{s.student_no}}</td>
+                    <td>{{s.course}}</td>
+                    <td>{{s.year}}</td>
+                    <td style="color:green">{{s.status}}</td>
+                    
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <h1><i>*{{status}}</i></h1>
+    </center>
+    <br />
+    <br />
+    <br />
+   
+</form>
+{%endblock%}

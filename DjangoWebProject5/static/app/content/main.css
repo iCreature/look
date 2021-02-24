@@ -1,0 +1,336 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    width: 70%;
+    height: 55px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+    background-color: rgb(176, 237, 247);
+    border-radius: 50px;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+}
+
+.top {
+    width: 100%;
+    height: 255px;
+    background-color: rgb(11, 19, 49);
+    padding: 15px;
+    margin: 0px;
+    font-weight: bold;
+   
+    font-size: 55px;
+    color: #ffff;
+    padding-top: 18px;
+    position: fixed;
+}
+.write {
+    width: 100%;  
+    background-color: #fff;
+    padding: 15px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 55px;
+    color: #000;
+    padding-top: 18px;
+    position: fixed;
+    border-bottom: 1px solid #000; 
+}
+
+.top p {
+    font-size: small;
+}
+
+.top img {
+    float: left;
+}
+
+input {
+    width: 70%;
+    height: 55px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+    background-color: rgb(176, 237, 247);
+    border-radius: 50px;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+}
+
+button {
+    width: 70%;
+    height: 58px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+    border: 1px solid #000;
+    font-weight: bold;
+    color: #f5f5f5;
+    font-size: 19px;
+    background-color: rgb(11, 19, 49);
+    border-radius: 25px;
+}
+
+button:hover {
+    transition: all ease 1.5s;
+    background-color: #ffff;
+    color: #000;
+    border-radius: 45px;
+}
+
+textarea {
+    border: .5px solid rgb(11, 19, 49);
+    text-align: left;
+    padding: 5px;
+    margin: 15px;
+    font-style: italic;
+    font-weight: bolder;
+    width: 85%;
+}
+
+
+/* Grids*/
+
+.title {
+    background-color: rgb(247, 184, 69);
+    width: 85%;
+    padding: 14px 15px;
+    color: #f3f3f3;
+    border-radius: 55px;
+}
+
+.question {
+    background-color: #f4f4f4f4;
+    width: 85%;
+    padding: 12px 16px;
+    color: rgb(11, 19, 49);
+    border-radius: 55px;
+}
+.t1 {
+    width: 40%;
+}
+
+.t2 {
+    width: 35%;
+}
+
+.dash-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 85%;
+    column-gap: 10px;
+    row-gap: 15px;
+    padding: 12px;
+}
+
+.dash-item {
+    color: #000;
+    background-color: rgb(176, 237, 247);
+    border-radius: 55px;
+    padding: 5px;
+}
+
+.dash-item2 {
+    color: #f3f3f3;
+    background-color: rgb(77, 92, 95);
+    border-radius: 55px;
+    padding: 5px;
+}
+
+.dash-item3 {
+    color: #000;
+    background-color: #f5f5f5;
+    border-radius: 55px;
+    padding: 5px;
+}
+
+.navbar {
+    background-color: #fff;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    margin: 0px;
+    border-top: #fff solid 0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    font-size: 18px;
+    text-align: center;
+    float: left;
+}
+#typed {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size:20px;
+}
+
+.typed-cursor {
+    color: transparent;
+}
+
+.navbar a:hover {
+    background-color: rgb(11, 19, 49);
+    color: rgb(11, 19, 49);
+    transition: 1s ease all;
+    border-radius: 50px;
+}
+
+.navbar a.active {
+    background-color: rgb(11, 19, 49);
+    color: rgb(11, 19, 49);
+    border-radius: 50px;
+}
+
+.navbar a.middle {
+    background-color: rgb(11, 19, 49);
+    color: rgb(11, 19, 49);
+    border-radius: 50px;
+}
+
+
+/* screen sizes*/
+
+@media screen and (orientation:landscape) {
+    input {
+        width: 65%;
+    }
+    button {
+        width: 35%;
+    }
+    hr {
+        width: 45%;
+    }
+    .top {
+        height: 85px;
+    }
+    .title {
+        width: 30%
+    }
+}
+
+@media screen and (orientation:portrait) {
+    input {
+        width: 75%;
+    }
+    button {
+        width: 60%;
+    }
+    hr {
+        width: 75%;
+    }
+    .top {
+        height: 85px;
+    }
+    .t1 {
+        width: 0.5%;
+    }
+    .t2 {
+        width: 35%;
+    }
+    .dash-grid {
+        grid-template-columns: auto;
+    }
+    #typed {
+        font-size: 13px;
+    }
+}
+
+
+/* Side menu*/
+
+
+/* Center the loader */
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgb(176, 237, 247);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Add animation to "page content" */
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}

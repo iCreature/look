@@ -1,0 +1,39 @@
+{%extends "app/LayoutTestA.html"%}
+{%load static%}
+{%block content%}
+<form method="post">
+    <center>
+ <div class="title">
+   <h1><img src="{%static 'app/images/icons8-username-100.png'%}" width="50px"> Mr. Silas</h1>
+ </div>
+</center>
+     <br /> <br /> <br /> <br />
+<center>
+    <div class="dash-grid">
+        <div class="dash-item">
+            <h1> Student Information</h1>
+            <button name="btnS">View</button>
+            <br /><br />
+        </div>
+        
+         <div class="dash-item2">
+            <h1> Exam Schedule</h1>
+             <button name="btnE">View</button>
+             <br /><br />
+        </div>
+         
+         <div class="dash-item3">
+            <h1> Staff information</h1>
+             <button name="btnSt">View</button>
+             <br /><br />
+        </div>
+         
+        <div class="dash-item">
+            <h1>Current Sessions</h1>
+            <button name="btnC">View</button>
+            <br /><br />
+        </div>
+    </div>
+</center>
+</form>
+{%endblock%}

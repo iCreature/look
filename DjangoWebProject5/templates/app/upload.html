@@ -1,0 +1,20 @@
+{%extends 'app/layoutTestA.html'%}
+{%load static%}
+{%block content%}
+<form method="post" action=""enctype="multipart/form-data">
+    {%csrf_token%}
+    <center>
+        <button><a href="{%url 's_Dash'%}">Back</a></button>
+    </center>
+    <br /><br />
+    <center>
+        <h2><i style="color:forestgreen">*Choose Test/Exam that you wish to upload only pdf's allowed</i></h2>
+    </center>
+    <br />
+    <center>
+        <input type="file" accept=".pdf" name="file" required /><br /><br />
+        <button type="submit" name="btnUpload">Upload</button>
+    </center>
+   
+</form>
+{%endblock%}

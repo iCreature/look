@@ -1,0 +1,42 @@
+﻿{%extends "app/main.html"%}
+{%load static%}
+{%block content%}
+    <form method="post" action="">
+        {%csrf_token%}
+        <center>
+            <div class="title">
+                <h1><img src="{%static 'app/images/icons8-username-100.png'%}" width="50px">{{user}}</h1>
+            </div>
+        </center>
+        <br><br>
+        <center>
+            <button name="btnLog" type="submit">Logout</button>
+        </center>
+        <br><br><br><br>
+        <center>
+            <div class="dash-grid">
+                <div class="dash-item">
+                    <h1><img src="{%static 'app/images/icons8-schedule-100.png'%}" width="50px"> Schedule</h1>
+                    <hr size="2px" color="#000">
+                    <h3>
+                        You might have a test or exam due today
+                    </h3>
+                    <button><a href="{%url 'test'%}">Check</a></button><br /><br />
+                </div>
+                <div class="dash-item2">
+                    <h1><img src="{%static 'app/images/icons8-notification-96.png'%}" width="50px"> Notifications</h1>
+                    <hr size="2px" color="#000">
+                    <h3>Upload Your Test/Exam Here</h3>
+                    <button><a href="{%url 'upload_exam' %}">Upload</a></button>
+                    <br><br />
+                </div>
+                <div class="dash-item3">
+                    <h1><img src="{%static 'app/images/icons8-microsoft-tips-144.png'%}" width="50px"> Tips</h1>
+                    <hr size="2px" color="#000">
+                    <h3>{{tip}}</h3>
+                    <h3>Take note that as you write your test/exams, you will be monitored by both Author the A.I , and a numerous of your lectures</h3><br />
+                </div>
+                <br><br>
+            </div>
+    </form>
+{%endblock%}

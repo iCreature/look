@@ -1,0 +1,93 @@
+﻿{%extends "app/layoutTestA.html"%}
+{%load static%}
+{%block content%}
+<form method="post" action="">
+    {%csrf_token%}
+<!-- session(s) for name,n.o Q,author,duration, date,course-->
+            <button class="back"><a href="{%url 'test_info'%}">CANCEL</a></button>
+            <br><br>
+           
+            <center>
+                {% if not q %}
+                    <div class="question">
+                        <h1>{{question}} One.</h1>
+                        <textarea rows="10" name="q1" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Two.</h1>
+                        <textarea rows="10" name="q2" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Three.</h1>
+                        <textarea rows="10" name="q3" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Four.</h1>
+                        <textarea rows="10" name="q4" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_end">
+                        <h1>{{question}} Five.</h1>
+                        <textarea rows="10" name="q5" required></textarea>
+                    </div>
+                {%endif%}
+                {%if q%}
+                    <div class="question">
+                        <h1>{{question}} One.</h1>
+                        <textarea rows="10" name="q1" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Two.</h1>
+                        <textarea rows="10" name="q2" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Three.</h1>
+                        <textarea rows="10" name="q3" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Four.</h1>
+                        <textarea rows="10" name="q4" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Five.</h1>
+                        <textarea rows="10" name="q5"required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Six.</h1>
+                        <textarea rows="10" name="q6"required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Seven.</h1>
+                        <textarea rows="10" name="q7"required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Eight.</h1>
+                        <textarea rows="10" name="q8"required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_middle">
+                        <h1>{{question}} Nine.</h1>
+                        <textarea rows="10" name="q9" required></textarea>
+                    </div>
+                    <br>
+                    <div class="q_end">
+                        <h1>{{question}} Ten.</h1>
+                        <textarea rows="10" name="q10"required></textarea>
+                    </div>
+                {%endif%}
+            </center>
+
+            <br><br><br><br>
+            <center><button name="btnNext" value="submit">Submit</button></center>
+    </form>
+{%endblock%}
